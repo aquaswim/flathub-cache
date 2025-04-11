@@ -9,7 +9,7 @@ docker run -d \
     --name flathub-cache \
     -p 8080:80 \
     -v {your-cache-path}:/var/cache/nginx/flathub/cache
-    {prebuild image TBA}
+    aquaswim/flathub-cache:latest
 ```
 
 ## Update the flatpak client
