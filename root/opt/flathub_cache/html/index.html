@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>Flathub Cache</title>
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
+    >
+</head>
+<body>
+    <header>
+        <h1>Flathub Cache!</h1>
+    </header>
+    <main>
+        <h2>Update the flatpak client</h2>
+        <code>flatpak remote-modify flathub --url=<span id="text-base-url">{BASE_URL}</span>/flathub/repo/</code>
+        <hr>
+        <h2>Revert the flatpak client</h2>
+        <code>flatpak remote-modify flathub --url=https://dl.flathub.org/repo/</code>
+    </main>
+    <footer>
+        <a href="https://github.com/aquaswim/flathub-cache">github</a>
+    </footer>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function(){
+            const baseUrlEle = document.getElementById('text-base-url');
+            baseUrlEle.innerText = window.location.origin;
+        });
+    </script>
+</body>
+</html>
