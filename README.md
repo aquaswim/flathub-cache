@@ -15,7 +15,7 @@ docker run -d \
 ## Update the flatpak client
 
 ```
-flatpak remote-modify flathub --url=http://my-cache.local:8080/flathub/repo/
+flatpak remote-modify flathub --url=http://my-cache.local:8080/repo/
 ```
 
 ## Revert the flatpak client
