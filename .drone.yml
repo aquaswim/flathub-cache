@@ -1,0 +1,25 @@
+---
+kind: pipeline
+type: docker
+name: default
+
+trigger:
+  branch:
+    - main
+
+steps:
+  - name: docker
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: GITEA_DOCKER_USERNAME
+      password:
+        from_secret: GITEA_DOCKER_PASSWORD
+      registry:
+        from_secret: DOCKER_REGISTRY
+      repo:
+        from_secret: DOCKER_REPO
+      auto_tag: true
+      tags:
+        - latest
+        - ${DRONE_BUILD_NUMBER}
