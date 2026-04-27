@@ -10,9 +10,6 @@ trigger:
 steps:
   - name: docker
     image: plugins/docker
-    volumes:
-    - name: dockersock
-      path: /var/run/docker.sock
     settings:
       username:
         from_secret: GITEA_DOCKER_USERNAME
@@ -26,8 +23,4 @@ steps:
       tags:
         - latest
         - ${DRONE_BUILD_NUMBER}
-
-volumes:
-- name: dockersock
-  host:
-    path: /var/run/docker.sock
+      mirror: http://192.168.1.202:5000
