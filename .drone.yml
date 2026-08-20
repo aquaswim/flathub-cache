@@ -23,4 +23,4 @@ steps:
       tags:
         - latest
         - ${DRONE_BUILD_NUMBER}
-      mirror: http://192.168.1.202:5000
+      # mirror: http://192.168.1.202:5000
